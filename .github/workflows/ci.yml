@@ -1,0 +1,46 @@
+name: Project 15 - Advanced AWS CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        working-directory: ./app
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Test Flask application
+        working-directory: ./app
+        run: |
+          python -c "from app import app; client = app.test_client(); response = client.get('/health'); assert response.status_code == 200; print('Health test passed')"
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t project15-app:${{ github.sha }} \
+            -t project15-app:latest \
+            ./app
+
+      - name: Verify Docker image
+        run: |
+          docker images project15-app
