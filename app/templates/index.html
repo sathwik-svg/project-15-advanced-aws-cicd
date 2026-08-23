@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Project 15 - Advanced AWS CI/CD cloud engineering portfolio project">
+
+    <title>Project 15 | Advanced AWS CI/CD</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="brand">
+        <span class="brand-mark">☁</span>
+        <div>
+            <strong>Project 15</strong>
+            <small>Cloud Engineering</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#architecture">Architecture</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#technology">Technology</a>
+    </nav>
+
+    <a
+        class="github-btn"
+        href="https://github.com/sathwik-svg/project-15-advanced-aws-cicd"
+        target="_blank">
+        GitHub ↗
+    </a>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            <span class="pulse"></span>
+            PRODUCTION-STYLE CLOUD PROJECT
+        </div>
+
+        <h1>
+            Advanced
+            <span>AWS CI/CD</span>
+            Pipeline
+        </h1>
+
+        <p class="hero-text">
+            A production-inspired container delivery platform demonstrating
+            CI/CD automation, Docker, container registries, ECS-style
+            deployment and load balancing — built locally without AWS costs.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#architecture" class="primary-btn">
+                Explore Architecture →
+            </a>
+
+            <a
+                href="https://github.com/sathwik-svg/project-15-advanced-aws-cicd"
+                target="_blank"
+                class="secondary-btn">
+                View Source
+            </a>
+        </div>
+
+        <div class="hero-meta">
+            <div>
+                <strong>15</strong>
+                <span>Portfolio Project</span>
+            </div>
+
+            <div>
+                <strong>CI/CD</strong>
+                <span>Automated Pipeline</span>
+            </div>
+
+            <div>
+                <strong>Docker</strong>
+                <span>Containerized</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="status-card">
+
+        <div class="status-header">
+            <span>LIVE SYSTEM</span>
+            <span class="live-dot"></span>
+        </div>
+
+        <div class="status-icon">
+            ✓
+        </div>
+
+        <h2 id="system-status">
+            System Operational
+        </h2>
+
+        <p id="status-message">
+            Checking production environment...
+        </p>
+
+        <div class="status-line">
+            <span>Environment</span>
+            <strong>{{ environment }}</strong>
+        </div>
+
+        <div class="status-line">
+            <span>Runtime</span>
+            <strong>Docker + Gunicorn</strong>
+        </div>
+
+        <div class="status-line">
+            <span>Health</span>
+            <strong class="healthy">● Healthy</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="architecture">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">01 / ARCHITECTURE</span>
+            <h2>Cloud delivery architecture</h2>
+        </div>
+
+        <p>
+            AWS services are represented locally so the complete workflow
+            can be demonstrated without requiring an AWS account.
+        </p>
+    </div>
+
+
+    <div class="architecture">
+
+        <div class="architecture-node">
+            <div class="node-icon">⌘</div>
+            <span>GitHub</span>
+            <small>Source Control</small>
+        </div>
+
+        <div class="connector">→</div>
+
+        <div class="architecture-node">
+            <div class="node-icon">⚙</div>
+            <span>GitHub Actions</span>
+            <small>CI/CD</small>
+        </div>
+
+        <div class="connector">→</div>
+
+        <div class="architecture-node">
+            <div class="node-icon">🐳</div>
+            <span>Docker</span>
+            <small>Container</small>
+        </div>
+
+        <div class="connector">→</div>
+
+        <div class="architecture-node">
+            <div class="node-icon">▣</div>
+            <span>ECR</span>
+            <small>Registry</small>
+        </div>
+
+        <div class="connector">→</div>
+
+        <div class="architecture-node">
+            <div class="node-icon">▦</div>
+            <span>ECS</span>
+            <small>Compute</small>
+        </div>
+
+        <div class="connector">→</div>
+
+        <div class="architecture-node">
+            <div class="node-icon">◇</div>
+            <span>ALB</span>
+            <small>Load Balancer</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="pipeline">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">02 / DELIVERY</span>
+            <h2>CI/CD pipeline</h2>
+        </div>
+
+        <p>
+            Every stage represents a real-world cloud delivery workflow.
+        </p>
+    </div>
+
+
+    <div class="pipeline">
+
+        <div class="pipeline-step completed">
+            <span>01</span>
+            <div>
+                <strong>Source</strong>
+                <small>Git push</small>
+            </div>
+            <b>✓</b>
+        </div>
+
+        <div class="pipeline-step completed">
+            <span>02</span>
+            <div>
+                <strong>Build</strong>
+                <small>Docker image</small>
+            </div>
+            <b>✓</b>
+        </div>
+
+        <div class="pipeline-step completed">
+            <span>03</span>
+            <div>
+                <strong>Test</strong>
+                <small>Automated validation</small>
+            </div>
+            <b>✓</b>
+        </div>
+
+        <div class="pipeline-step completed">
+            <span>04</span>
+            <div>
+                <strong>Registry</strong>
+                <small>ECR simulation</small>
+            </div>
+            <b>✓</b>
+        </div>
+
+        <div class="pipeline-step completed">
+            <span>05</span>
+            <div>
+                <strong>Deploy</strong>
+                <small>ECS simulation</small>
+            </div>
+            <b>✓</b>
+        </div>
+
+        <div class="pipeline-step completed">
+            <span>06</span>
+            <div>
+                <strong>Route</strong>
+                <small>ALB simulation</small>
+            </div>
+            <b>✓</b>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="technology">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">03 / ENGINEERING</span>
+            <h2>Technology stack</h2>
+        </div>
+    </div>
+
+
+    <div class="technology-grid">
+
+        <article>
+            <span>☁</span>
+            <h3>Cloud</h3>
+            <p>AWS architecture concepts with local service simulations.</p>
+        </article>
+
+        <article>
+            <span>🐳</span>
+            <h3>Containers</h3>
+            <p>Dockerized Flask application with production Gunicorn runtime.</p>
+        </article>
+
+        <article>
+            <span>⚡</span>
+            <h3>CI/CD</h3>
+            <p>GitHub Actions workflow for automated validation and delivery.</p>
+        </article>
+
+        <article>
+            <span>⌁</span>
+            <h3>Networking</h3>
+            <p>Nginx reverse proxy representing an Application Load Balancer.</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="metrics">
+
+    <div>
+        <strong id="uptime">100%</strong>
+        <span>Application Availability</span>
+    </div>
+
+    <div>
+        <strong>6</strong>
+        <span>Pipeline Stages</span>
+    </div>
+
+    <div>
+        <strong>8+</strong>
+        <span>Cloud Concepts</span>
+    </div>
+
+    <div>
+        <strong>HTTPS</strong>
+        <span>Public Demo</span>
+    </div>
+
+</section>
+
+
+<section class="cta">
+
+    <span class="section-label">CLOUD ENGINEERING PORTFOLIO</span>
+
+    <h2>
+        Built to demonstrate
+        <span>real engineering thinking.</span>
+    </h2>
+
+    <p>
+        From source control to containerized deployment and health monitoring,
+        this project models the workflow used in modern cloud environments.
+    </p>
+
+    <a
+        href="https://github.com/sathwik-svg/project-15-advanced-aws-cicd"
+        target="_blank"
+        class="primary-btn">
+        Explore on GitHub →
+    </a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        <strong>Sathwik</strong>
+        <span>Cloud / DevOps Portfolio</span>
+    </div>
+
+    <span>Project 15 · Advanced AWS CI/CD</span>
+
+    <span>© 2026</span>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
