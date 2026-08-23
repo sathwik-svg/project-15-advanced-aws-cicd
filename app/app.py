@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 import socket
 
@@ -6,18 +6,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return {
-        "application": "Project 15 - Advanced AWS CI/CD",
-        "status": "running",
-        "hostname": socket.gethostname(),
-        "environment": os.getenv("ENVIRONMENT", "local")
-    }
+    return render_template(
+        "index.html",
+        application="Project 15 — Advanced AWS CI/CD",
+        environment=os.getenv("ENVIRONMENT", "production"),
+        hostname=socket.gethostname()
+    )
 
 @app.route("/health")
 def health():
-    return {
-        "status": "healthy"
-    }
+    return {"status": "healthy"}
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    port = int(os.getenv("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
